@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" >
+<title>Alumno</title>
+</head>
+<body>
+
+<div th:fragment="alumno">
+
+		<div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-md-8">
+                    <h3 style="">
+                        <strong>Alumnos en el sistema </strong>
+                    </h3>
+                    <br></br>
+                    <!--Table-->
+                    <table class="table table-responsive-md">
+
+                        <!--Table head-->
+                        <thead class="cyan lighten-3">
+                            <tr>
+                                
+                                <th class="th-lg">#</th>
+                                <th class="th-lg">Nombre</th>
+                                <!--
+                                <th class="th-lg">Apellido Paterno</th>
+                                <th class="th-lg">Apellido Materno</th> 
+                                 -->
+                                <th class="th-lg">Edad</th>
+                                <th class="th-lg">Nombre Profesor</th>
+                                <th class="th-lg"></th>
+                            </tr>
+                        </thead>
+                        <!--Table head-->
+
+                        <!--Table body-->
+                        <tbody>
+                            <tr th:each="alumno: ${vista.alumnos}">
+                                <td th:text="${alumno.id}">ID</td>
+                                <td th:text="${alumno.nombre+' '+alumno.apellidop+' '+alumno.apellidom}">Nombre</td>
+                               <!-- 
+                               <td th:text="${alumno.apellidop}">Apellido paterno</td>
+                                <td th:text="${alumno.apellidom}">Apellido materno</td> 
+                                -->
+                                <td th:text="${alumno.edad}">Edad</td>
+                                <td th:text="${alumno.nombreProfesor}">Nombre Profesor</td>
+                                <td><a th:href="@{alumno/findOne(id=${alumno.id})}" class="btn btn-primary editAlumno">Editar</a></td>
+                            </tr>
+                            
+                            <th scope="col">
+<form id="cajaNuevoTicket-form">
+<div class="form-group">
+<label> <strong>Seleccione un cliente para un nuevo ticket</strong></label> 
+<select id="cajaNuevoTicketSelect" class="custom-select" name="idCliente">
+  <option  value="0">Seleccione un cliente</option>
+  <option th:each="cliente : ${ticket.clientes}" th:value="${cliente.id}" th:text="${cliente.nombre}">Cliente</option>
+</select>
+<br></br>
+
+</div>
+<input  type="submit" class="btn btn-danger" value="Nuevo Ticket" />
+</form> 
+                            
+                            
+                            
+
+                        </tbody>
+                        <!--Table body-->
+
+                    </table>
+                    <!--Table-->
+
+
+
+
+
+
+
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading" align="center">
+                            <font size="4.5"><span
+                                class="glyphicon glyphicon-calendar"><strong>
+                                        Agregar Alumno</strong></span></font>
+                        </div>
+
+                        <div class="panel-body">
+                            <form id="nuevoAlumno-form">
+                            
+                                   	<div class="form-group">
+                                	<input type="text" class="form-control" name="nombre"
+                                        placeholder="Nombre" th:required="required"/>
+                                	</div>
+                                	<div class="form-group">
+                                	<input type="text" class="form-control" name="apellidop"
+                                        placeholder="Apellido Paterno" th:required="required"/>
+                                	</div>
+                                	<div class="form-group">
+                                	<input type="text" class="form-control" name="apellidom"
+                                        placeholder="Apellido Materno" th:required="required"/>
+                                	</div>
+                                	<div class="form-group">
+                                	<input type="text" class="form-control" name="edad"
+                                        placeholder="Edad" th:required="required"/>
+                                	</div>
+                                
+                                
+                                
+                            
+                              
+                                
+                                <input type="submit" class="btn btn-primary" value="Agregar" />
+                            
+                            
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            
+        </div>
+
+
+</div>
+
+
+</body>
+</html>

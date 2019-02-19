@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:replace="fragment/header :: header" />
+
+<nav class="navbar navbar-light justify-content-between" style="background-color: #e3f2fd;">
+        <div class="container">
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"> <img
+                    src="webjars/img/arl-7040.png" /></a>
+            </div>
+
+                <form id="logout-form" class="form-inline">
+
+                    <div class="btn-group">
+                        <button type="button"
+                            class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary anchobotonmenu"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Alumnos</button>
+                        <div class="dropdown-menu">
+                            <a class="btn btn-info anchoheaderhref" href="/alumno" role="button" aria-expanded="false" aria-controls="collapseExample">Ver alumnos </a> 
+                            <!-- <a class="btn btn-info anchoheaderhref" href="/menu?content=cajaCorte" role="button" aria-expanded="false" aria-controls="collapseExample">Corte de Caja </a> -->
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button type="button"
+                            class="anchobotonmenu btn btn-info dropdown-toggle  btn-outline-primary anchobotonmenu"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Profesores</button>
+                        <div class="dropdown-menu">
+                            <a class="btn btn-info anchoheaderhref" href="/profesor" role="button" aria-expanded="false" aria-controls="collapseExample">Ver profesores </a> 
+                            <!--  <a class="btn btn-info anchoheaderhref" href="/menu?content=catalogoTalla" role="button" aria-expanded="false" aria-controls="collapseExample">Tallas </a>-->
+                            
+                        </div>
+                    </div>
+                    
+                </form>
+        </div>
+    </nav>
+
+
+
+    <div class="fondoMenu">
+        <div class="botonesMenu"><p th:text="${'Perfil: '+user.nombreGrupo+'  Usuario: '+user.usuario}">Perfil</p>
+        
+        </div>
+
+        
+    </div>
+
+<div class="container">
+<div th:replace="@{'views/' + ${content}} :: ${content}"></div>
+
+</div>
+
+<div th:replace="fragment/footer :: footer" />
+</body>
+</html>

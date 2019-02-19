@@ -1,0 +1,130 @@
+service rest
+srping boot
+...
+-------------------------------------------------
+
+en spring io generamos un archivo rest con la libreria WEB y MYSL driver
+
+importamos el proyecto dentro de nuestro ide (eclipse)
+
+abrimos postman y creamos una nueva collection
+
+con el metodo get, ponemos un localhost con el puerto 8090 y la demas direccion
+
+se hace uno por cada request (3)
+
+damos en save y lo metemos a la coleccion previamente creada
+
+le damos un request name para encontrarlo mas facil
+
+correr el proyecto en nuestro ide (eclipse) para verificar que el proyecto no tenga un error previo
+
+archivo de propiedades del proyecto donde el server port sera igual a 8090
+
+volvemos a corrrer el proyecto para verificar si se cambio el puerto
+
+creamos una clase que sera controller
+
+le ponemos la etiqueta RestController
+
+*request mapping*
+
+modelos=objetos planos
+
+creamos un modelo llamado profesor
+
+creamos una clase para la clase generica (respuestas de error) se puede llamar respuesta generica
+en esta clase declaramos variables para recibir el codigo y para mandar mensaje
+
+esto sirve para resivir cualquier tipo de objeto
+<ejemplo, otroEjemplo>
+
+en la linea de codigo se le anade <T, oEjempolo>
+
+* no necesitan constructores los modelos u objetos*
+
+tambien se crea una variable con el objeto de respuesta
+
+se le anaden los setter y getter a la clase
+
+en la clase profesor 
+
+* las clases van siempre con mayuscula la primera*
+
+se le ponen los valores que recibira esta clase y se le generan los setter y getter
+
+en el controler se devolberan los valores (es como la interface en android studio, solo parecido)
+
+etiqueta tipo get (varia)
+
+<se laman genericas>
+* REsponseEntity...*
+
+se indica la respuesta generica y metemos nuestro objeto Profesor
+obtenemos la respuesta con pathVariable por er un id y le hacemos una validacion
+
+* las interfaces van en servicios*
+
+arriba de la etiqueta @getMapping...
+
+* intentar dejar limpio el controller*
+
+se crea la interfaz y se le pone el metodo que se llama en la ultima llamada del controller
+
+* pathvariable y requestparam*
+
+regresamos al controler y con la notacion @getmapping...
+
+obtenProfesores por edad y recibimos un path variable, indicamos donde guardarlo con el ultimo int que se puede llamar como sea
+
+return y mandamos a llamar la interface que deberemos de crear y poner el metodo publico
+
+en el controller... @requestparam(value=sexo,requered=true)
+
+y creamos la interfaz que estamos regresamos 
+
+* si se deja un ? en la respuesta generica se puede ingresar cualquier objeto despues*
+
+-----
+
+* extenemos de la interface IProfesores*
+
+creamos una clase llamada bisnes la cual se encargara de obtener todos los request
+
+retornamos un objeto para verificar que si esta respondiendo de manera corrrecta
+
+marca error porque en el bisnes es una implementacion debe ser un @service y la interface debe ser @component
+
+* lo que metas en autowired lo recicla el srping boot*
+
+profesores/1 (id)
+
+profesores/edad/30
+
+profesores/sexo?sexo=Femenino
+
+
+* en git no se subin basuras ni binarios e ignorar todos los
+.gitignore
+
+.gradle/*
+
+.bin/*
+*
+
+* manejar mysl workbreanch*
+
+* aprenderse los query*
+
+en mysql workbreanch debemos entrar a nuestra coneccion con el localhost y crear una nueva tabla con los valores que vamosa llamar desde nuestro rest api
+
+
+-----------------------
+
+crear una igual a la anterior pero de alumnos (con los parametros ya solicitados)
+
+
+
+
+
+

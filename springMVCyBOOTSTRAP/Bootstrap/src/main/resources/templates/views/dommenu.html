@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+<div th:fragment="dommenu">
+
+
+<h1>Do something here!!</h1>
+<!-- 
+
+<div class="container-fluid">
+<div class="row">
+            <p th:text="${cuenta.leyenda}">leyenda</p>
+              <br></br>
+              <br></br>
+<div class="col-md-8">
+<h3 style="align=center;">
+<strong>Mis Pagos</strong>
+</h3>
+<br></br>
+
+<table class="table table-responsive-md">
+
+
+<thead class="cyan lighten-3">
+<tr>
+<th class="th-lg">#</th>
+<th class="th-lg">Fecha</th>
+<th class="th-lg">Mes</th>
+<th class="th-lg">Año</th>
+<th class="th-lg">Monto</th>
+</tr>
+</thead>
+
+
+
+<tbody>
+<tr th:each="pago: ${cuenta.pagos}">
+<td th:text="${pago.id}">#</td>
+<td th:text="${pago.fecha}">#</td>
+<td th:text="${pago.mes}">Dia</td>
+<td th:text="${pago.anio}">Hora</td>
+<td th:text="${pago.montoPago}">MontoPago</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+</div>
+<div class="col-md-4">
+<div class="panel panel-info">
+<div class="panel-heading" align="center">
+<font size="4.5"><span class="glyphicon glyphicon-time"><strong>
+Mi Cuenta</strong></span></font>
+</div>
+<div class="panel-body">
+<form id="cuenta-form">
+<div class="form-group">
+<label for="estadoPago"  th:style="${cuenta.debe == true} ? ${'color: red;'}:${'color: blue;'}" th:text="${cuenta.estadoDelPago}"><strong>Estado del Pago</strong></label>
+
+
+
+</div>
+<div class="form-group">
+<label for="transferencias"><strong>Datos para pagos</strong></label>
+
+</div>
+
+<div class="form-group">
+<label for="datosPago" th:text="${cuenta.datosTransferencia}"><strong>Datos de Transferencia</strong></label> 
+</div>
+
+<div class="form-group">
+<label for="comprobantes"><strong> Datos para enviar comprobantes de pago y soporte</strong></label>
+
+</div>
+
+<div class="form-group">
+<label for="datosPago" th:text="${'Correo: '+ cuenta.emailPago}"><strong>Datos de Transferencia</strong></label> 
+</div>
+<div class="form-group">
+<label for="datosPago" th:text="${'WhatsApp '+ cuenta.celPago}"><strong>Datos de Transferencia</strong></label> 
+</div>
+
+
+
+
+
+</form>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+ -->
+
+
+
+
+
+</div>
+
+</body>
+</html>

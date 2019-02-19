@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<div th:fragment="footer">
+<div th:replace="fragment/modals/modals :: modales" />
+
+<footer class="ms-footer">
+<div class="container">
+<p>Copyright ©ControlEscolar 2019</p>
+</div>
+</footer>
+
+<script th:src="@{/jquery/jquery.min.js}"></script>  
+      <script th:src="@{/popper/popper.min.js}"></script>  
+      <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>   
+      <script src="Script.js"></script>
+
+</div>
+
+</body>
+</html>

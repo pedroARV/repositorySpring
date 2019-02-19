@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8" >
+<title>Profesor</title>
+</head>
+<body>
+
+<div th:fragment="profesor">
+
+    
+        <div class="container-fluid">
+            <div class="row">
+
+
+                <div class="col-md-8">
+                    <h3 style="">
+                        <strong>Profesores en el sistema </strong>
+                    </h3>
+                    <br></br>
+                    <!--Table-->
+                    <table class="table table-responsive-md">
+
+                        <!--Table head-->
+                        <thead class="cyan lighten-3">
+                            <tr>
+                                
+                                <th class="th-lg">#</th>
+                                <th class="th-lg">Nombre</th>
+                                <th class="th-lg"></th>
+                            </tr>
+                        </thead>
+                        <!--Table head-->
+
+                        <!--Table body-->
+                        <tbody>
+                            <tr th:each="profesor: ${profesores}">
+                                <td th:text="${profesor.id}">ID</td>
+                                <td th:text="${profesor.nombre}">Nombre</td>
+                                <td><a th:href="@{profesor/findOne(id=${profesor.id})}" class="btn btn-primary editProfesor">Editar</a></td>
+                            </tr>
+
+                        </tbody>
+                        <!--Table body-->
+
+                    </table>
+                    <!--Table-->
+
+
+
+
+
+
+
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading" align="center">
+                            <font size="4.5"><span
+                                class="glyphicon glyphicon-calendar"><strong>
+                                        Agregar Profesor</strong></span></font>
+                        </div>
+
+                        <div class="panel-body">
+                            <form id="nuevoProfesor-form">
+                                
+                                
+                                
+                                
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="nombre"
+                                        placeholder="Nombre Completo" th:required="required"/>
+                                </div>
+                            
+                              
+                                
+                                <input type="submit" class="btn btn-primary" value="Agregar" />
+                            
+                            
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    
+
+    </div>
+
+
+</body>
+</html>
